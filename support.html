@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — QueueDate</title>
+<style>
+  :root {
+    --ink: #16232a;
+    --muted: #5b6b73;
+    --line: #dfe5e7;
+    --accent: #0e2a33;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 24px 96px;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 660px; margin: 0 auto; }
+  header { padding: 72px 0 40px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.015em; }
+  .lede { color: var(--muted); margin: 0; }
+  h2 { font-size: 21px; margin: 48px 0 14px; letter-spacing: -0.01em; }
+  h3 { font-size: 17px; margin: 28px 0 6px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  .contact {
+    margin: 32px 0 0;
+    padding: 22px 24px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .contact p:last-child { margin-bottom: 0; }
+  dl { margin: 0; }
+  dt { font-weight: 600; margin-top: 26px; }
+  dd { margin: 6px 0 0; color: var(--ink); }
+  ol, ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  footer {
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 15px;
+  }
+  code {
+    background: #f2f5f6; padding: 1px 5px; border-radius: 4px;
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>QueueDate support</h1>
+  <p class="lede">Help with setup, delivery date calculation, and billing.</p>
+</header>
+
+<div class="contact">
+  <p><strong>Email:</strong> <a href="mailto:REPLACE@EXAMPLE.COM">REPLACE@EXAMPLE.COM</a></p>
+  <p>We reply within one business day, Monday to Friday.</p>
+</div>
+
+<h2>Getting started</h2>
+<p>The <a href="./docs.html">setup guide</a> covers installing the app, adding the
+delivery date block to your theme, and configuring production capacity.</p>
+
+<h2>Common questions</h2>
+
+<dl>
+
+<dt>Where does the delivery date come from?</dt>
+<dd>QueueDate counts the orders currently waiting to be produced, divides that
+number by your daily production capacity, and adds the result to today's date as
+working days. Transit days are then added to get the delivery date. Closure days
+and non-working days are skipped.</dd>
+
+<dt>Which orders count as being in the queue?</dt>
+<dd>Open, unfulfilled orders. Once an order is fulfilled or cancelled it leaves
+the queue and the date moves earlier for everyone still waiting.</dd>
+
+<dt>The date on my product page is not updating.</dt>
+<dd>Check three things. First, that the delivery date block is still present in
+your theme — a theme change can remove it. Second, that the app proxy path in the
+block settings matches <code>/apps/eta</code>. Third, whether your storefront is
+serving a cached page; hard refresh the product page to confirm.</dd>
+
+<dt>Nothing appears where the block should be.</dt>
+<dd>The block hides itself when it has no date to show, rather than displaying an
+empty space. This happens when the queue is too long to estimate. Set a long lead
+time message in the block settings to display text in that case.</dd>
+
+<dt>What does the cutoff time do?</dt>
+<dd>Orders placed after the cutoff start production the next working day. Set it
+to the time you stop taking work into the workshop each day.</dd>
+
+<dt>Can production and shipping use different calendars?</dt>
+<dd>Yes. Working days control when you produce, and carrier delivery days control
+when the courier moves parcels. A workshop closed at weekends can still have
+Saturday deliveries.</dd>
+
+<dt>How do I change or cancel my plan?</dt>
+<dd>Uninstalling the app from your Shopify admin ends the subscription. Charges
+appear on your regular Shopify invoice.</dd>
+
+<dt>What data does the app access?</dt>
+<dd>Order records, used only to count how many orders are waiting. The app does
+not read customer details. See the
+<a href="./index.html">privacy policy</a> for the full description.</dd>
+
+</dl>
+
+<footer>
+  <p>QueueDate · <a href="./docs.html">Setup guide</a> ·
+  <a href="./index.html">Privacy policy</a></p>
+</footer>
+
+</main>
+</body>
+</html>

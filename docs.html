@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup guide — QueueDate</title>
+<style>
+  :root {
+    --ink: #16232a;
+    --muted: #5b6b73;
+    --line: #dfe5e7;
+    --accent: #0e2a33;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 24px 96px;
+    background: #fff;
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 660px; margin: 0 auto; }
+  header { padding: 72px 0 40px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.015em; }
+  .lede { color: var(--muted); margin: 0; }
+  h2 { font-size: 21px; margin: 48px 0 14px; letter-spacing: -0.01em; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  ol { margin: 0 0 14px; padding-left: 22px; }
+  ol li { margin-bottom: 12px; }
+  ul { margin: 8px 0 0; padding-left: 22px; }
+  ul li { margin-bottom: 5px; }
+  code {
+    background: #f2f5f6; padding: 1px 5px; border-radius: 4px; font-size: 15px;
+  }
+  table {
+    width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 16px;
+  }
+  th, td {
+    text-align: left; padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  th { font-weight: 600; width: 34%; }
+  .note {
+    margin: 20px 0; padding: 16px 20px;
+    border-left: 3px solid var(--accent); background: #f7f9fa;
+  }
+  .note p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 15px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Setting up QueueDate</h1>
+  <p class="lede">From install to a live delivery date on your product pages.</p>
+</header>
+
+<h2>1. Set your production capacity</h2>
+<p>Open the app and go to Settings. These four values decide every date the app
+shows:</p>
+
+<table>
+  <tr>
+    <th>Daily production capacity</th>
+    <td>How many orders you finish on an average working day.</td>
+  </tr>
+  <tr>
+    <th>Transit days</th>
+    <td>How long the courier takes once a parcel leaves you.</td>
+  </tr>
+  <tr>
+    <th>Cutoff time</th>
+    <td>Orders placed after this time start production the next working day.</td>
+  </tr>
+  <tr>
+    <th>Working days</th>
+    <td>The days your workshop produces. Carrier delivery days are set separately,
+    so a closed Saturday can still be a delivery day.</td>
+  </tr>
+</table>
+
+<p>Save, then return to the dashboard. It shows how many orders are waiting and
+the date those settings produce, so you can check the result before customers see
+it.</p>
+
+<h2>2. Add the block to your theme</h2>
+<p>On the dashboard, click <strong>Add to theme</strong>. This opens your theme
+editor with the QueueDate block already selected and placed on a product page.</p>
+<ol>
+  <li>Drag the block to where you want the message to appear. Under the price or
+  below the add-to-cart button both work well.</li>
+  <li>Click <strong>Save</strong> in the theme editor.</li>
+  <li>Open any product page on your storefront to confirm the message appears.</li>
+</ol>
+
+<div class="note">
+  <p>If you change themes later, add the block again in the new theme. Blocks do
+  not carry across themes.</p>
+</div>
+
+<h2>3. Write the message</h2>
+<p>The block settings hold the text customers read. Four variables are available:</p>
+<ul>
+  <li><code>{queue}</code> — orders currently in the production queue</li>
+  <li><code>{ship_date}</code> — estimated ship date</li>
+  <li><code>{delivery_date}</code> — estimated delivery date</li>
+  <li><code>{capacity}</code> — orders produced per day</li>
+</ul>
+<p>A message such as <em>Made to order — currently {queue} orders in queue. Ships
+by {ship_date}, delivered around {delivery_date}.</em> tells the customer both the
+date and the reason behind it.</p>
+
+<p>Set the long lead time message as well. It replaces the normal text when the
+queue grows past the point where a date can be estimated, so the block never goes
+silent during a busy period.</p>
+
+<h2>4. Add your closure days</h2>
+<p>In Settings, add annual leave, public holidays, and any other days the workshop
+is closed. Closed days are skipped when counting production days, so a week off in
+August pushes every date forward automatically instead of promising work that will
+not happen.</p>
+
+<h2>Keeping dates accurate</h2>
+<p>The queue updates as orders arrive and as you fulfil them, so dates move on
+their own. Two things are worth revisiting: your daily capacity, if you take on
+help or lose it, and your closure calendar at the start of each year.</p>
+
+<footer>
+  <p>QueueDate · <a href="./support.html">Support</a> ·
+  <a href="./index.html">Privacy policy</a></p>
+</footer>
+
+</main>
+</body>
+</html>
